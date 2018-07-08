@@ -1,0 +1,15 @@
+<!-- ngStyle is a predefined directive that styles components dynamically.
+Here, we are binding it as a property (you can choose to bind it any other way.) This is indicated by []
+you need to pass a key and value pair to ngStyle. In this ex,  backgroundColor is the key and the value is being returned 
+from the getColor function.
+ -->
+ <!-- ngClass is a predefined directive that allows us to dynamically add or remove classes.
+ Again, we are going to use property binding as before.  
+You need to pass the class name and the condition under which it should be added. In this ex,
+online is the class name (defined in the style array in server.component.ts file) and
+serverStatus === 'Online' 
+is the condition.
+-->
+<p [ngStyle]="{backgroundColor: getColor()}"  [ngClass]="{online: serverStatus === 'Online' }" >
+	{{ 'Server' }} {{ serverId }} is {{serverStatus }} and the user is {{ getServerUser() }}
+</p>

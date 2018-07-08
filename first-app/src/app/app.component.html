@@ -1,0 +1,48 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-xs-12">
+		<!-- 
+If in the .ts file, the component is defined as '[app-server]' then use it:
+<div app-server> </div>
+If in the .ts file, the component is defined as '.app-server' then use it:
+<div class=".app-server"> </div>
+		-->
+			<label> Servers </label>
+			<!-- START 1-way even binding. uncomment for 1 way binding -->
+		<!-- 	<input type="text" class="form-control server-name" (input)="onUpdateServerName($event)" /> -->
+			<!-- in Angular, () specify event binding. $event is a reserved keyword that gives access to the event data -->
+			<!-- END 1 way event Binding -->
+
+			<!-- <p> {{ serverName }} </p> -->
+
+			<!-- START 2 way EVENT Binding -->
+			<!-- [()] represents 2 way binding -->
+			<input type="text" class="form-control server-name" [(ngModel)]="serverName"/>
+			<!-- in Angular, () specify event binding. $event is a reserved keyword that gives access to the event data -->
+
+			<!-- END 2 way event Binding -->
+
+
+			<button class="btn btn-primary" [disabled]="!allowAddServer" (click)="onCreateServer()">{{btntext}}</button>
+			<!-- String interpolation can also be done like this: -->
+		<!--	<p> {{ allowAddServer }} </p> -->
+			<!--Property binding can be done as follows: -->
+		<!--	<p [innerText]="allowAddServer"> </p> -->
+		<!--	<p> {{ serverCreationStatus }} </p> -->
+
+		<!-- * is used with ngIf because ngIf is a structural directive, menaing that it modifies the structure of the DOM.
+			It should be true or false. The noServer is a local reference
+		 -->
+		<p *ngIf="serverCreated; else noServer"> Server was created, server name is  {{ serverCreationStatus }} </p>
+		<!-- # indicates a local reference. ng-template is a pre defined directive/component within angular -->
+		<ng-template #noServer>
+		<p> 
+			No server was created!	
+		</p>
+		 </ng-template>										
+			
+		<app-server></app-server>
+		<app-server></app-server>
+		</div>
+	</div>
+</div>

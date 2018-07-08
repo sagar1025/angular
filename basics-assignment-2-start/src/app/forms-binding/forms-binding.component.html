@@ -1,0 +1,16 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-xs-12">
+			<label class="label-uname"> Username </label>
+			<input type="text" class="form-control username-text" [(ngModel)]="userName" />
+			<p class="p-uname"> {{ userName }} </p>
+		</div>
+	</div>
+</div>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-xs-12">
+			<button type="submit" class="btn btn-primary" [disabled]="!btnStatus()" (click)="resetName()" >Reset</button>
+		</div>
+	</div>
+</div>
