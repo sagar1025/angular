@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+		<button class="btn btn-primary" (click)="showHideP()"> {{ btnText }} </button>
+		<p *ngIf="showP"> 
+			Super secret password: P@ssword
+		</p>
+		<p *ngIf="showP" [ngStyle]="{backgroundColor: getbgColor()}" [ngClass]="{textColor: clicks > 4 }">
+		{{ numberOfClicks }}
+		</p>
+    </div>
+  </div>
+</div>
