@@ -1,3 +1,5 @@
+<!-- basic Angular bindings -->
+
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-xs-12">
@@ -39,10 +41,9 @@ If in the .ts file, the component is defined as '.app-server' then use it:
 		<p> 
 			No server was created!	
 		</p>
-		 </ng-template>										
-			
-		<app-server></app-server>
-		<app-server></app-server>
+		 </ng-template>
+
+		<app-server *ngFor="let currentServerName of serverList"></app-server>
 		</div>
 	</div>
 </div>

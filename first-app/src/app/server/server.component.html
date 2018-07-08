@@ -10,6 +10,6 @@ online is the class name (defined in the style array in server.component.ts file
 serverStatus === 'Online' 
 is the condition.
 -->
-<p [ngStyle]="{backgroundColor: getColor()}"  [ngClass]="{online: serverStatus === 'Online' }" >
-	{{ 'Server' }} {{ serverId }} is {{serverStatus }} and the user is {{ getServerUser() }}
+<p [ngStyle]="{backgroundColor: getColor()}"  [ngClass]="{online: serverStatus === 'Online' }" class="server-status">
+	<span class="offline"> {{ 'Server' }} {{ serverId }} is {{serverStatus }} </span>
 </p>

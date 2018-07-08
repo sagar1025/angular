@@ -6,6 +6,10 @@ import { Component } from '@angular/core';
 	styles: [`
 	.online {
 		color: white;
+		width: 20%;
+	}
+	.server-status {
+		width: 20%;
 	}
 	`]
 })
