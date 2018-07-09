@@ -37,10 +37,11 @@ export class BindingsComponent implements OnInit {
   	}
 
 	}
-	getbgColor() {
-		if(this.clicks > 4) {
+	getBlue() {
 			return 'blue';
-		}
 	}
+  getWhite() {
+    return 'white';
+  }
 
 }

@@ -1,13 +1,25 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-		<button class="btn btn-primary" (click)="showHideP()"> {{ btnText }} </button>
+		<button class="btn btn-primary" (click)="showHideP($event)"> {{ btnText }} </button>
 		<p *ngIf="showP"> 
 			Super secret password: P@ssword
 		</p>
-		<p *ngIf="showP" [ngStyle]="{backgroundColor: getbgColor()}" [ngClass]="{textColor: clicks > 4 }">
-		{{ numberOfClicks }}
-		</p>
-    </div>
-  </div>
+		<div *ngIf="showP">
+			<div *ngFor="let elm of numberOfClicks">
+				<div>
+					 <div *ngIf="elm >= 4; else elseBlock">
+					 	<p [ngStyle]="{backgroundColor: getBlue()}" [ngClass]="{textColor: clicks >= 4 }">
+					 		{{ elm }}
+					 	</p>
+					</div>
+					 <ng-template #elseBlock>
+					 	<p [ngStyle]="{backgroundColor: getWhite()}">
+					 		{{ elm }}
+					 	</p>
+					 </ng-template>
+				</div>
+			</div>
+	    </div>
+	</div>
 </div>
